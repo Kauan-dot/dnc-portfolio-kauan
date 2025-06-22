@@ -1,34 +1,10 @@
-import styled from 'styled-components'
-
-const Header = styled.div`
-  background-color: #0f1624;
-  padding: 20px;
-  color: white;
-
-  ul {
-    list-style: none;
-    display: flex;
-    padding: 0;
-
-    li {
-      margin: 0 10px;
-
-      a {
-        color: white;
-        text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-  }
-`
+import githubIcon from './assets/github.svg'
+import linkedinIcon from './assets/linkedin.svg'
 
 function App() {
   return (
     <>
-      <Header>
+      <header>
         <ul>
           <li>
             <a href="#">Projetos</a>
@@ -37,7 +13,15 @@ function App() {
             <a href="#">Sobre mim</a>
           </li>
         </ul>
-      </Header>
+        <div>
+          <a href="#">
+            <img src={githubIcon} />
+          </a>
+          <a href="#">
+            <img src={linkedinIcon} />
+          </a>
+        </div>
+      </header>
     </>
   )
 }
