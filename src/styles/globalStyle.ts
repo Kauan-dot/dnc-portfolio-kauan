@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle<{ theme?: DefaultTheme }>`
         font-family: "Poppins", sans-serif;
         background-color: ${(props) => props.theme.appBackground};
         color: ${(props) => props.theme.appColor};
+        scroll-behavior: smooth;
     }
 
     h1, h2, p, ul, li {

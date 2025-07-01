@@ -1,7 +1,15 @@
-import { Header } from '@/components'
+import { Header, Hero, Projects, About, Footer } from '@/components'
 
 function App() {
-  return <Header />
+  return (
+    <>
+      <Header />
+      <Hero />
+      <Projects />
+      <About />
+      <Footer />
+    </>
+  )
 }
 
 export default App
