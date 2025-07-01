@@ -1,34 +1,34 @@
-import Box from '@mui/material/Box'
-import Container from '@mui/material/Container'
+import { Box, Container } from '@mui/material'
+import { StyledH2 } from './Typographies'
 import githubIcon from '../assets/github.svg'
 import linkedinIcon from '../assets/linkedin.svg'
-import { StyledLink } from './StyledLink'
 
-function Header() {
+function Footer() {
   return (
     <Box
       component="header"
       sx={{
-        mb: { xs: 8, md: 19 },
-        height: '137px',
+        height: '100%',
         display: 'flex',
         alignItems: 'center',
       }}
     >
       <Container
-        maxWidth="xl"
+        maxWidth="lg"
         sx={{
-          px: { xs: 2, sm: 4, md: 4 },
+          mb: { xs: 8, md: 17 },
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
         }}
       >
-        <Box
-          sx={{ flex: 1, display: 'flex', justifyContent: 'center', gap: 25 }}
-        >
-          <StyledLink href="#projetos">Projetos</StyledLink>
-          <StyledLink href="#sobre">Sobre mim</StyledLink>
+        <Box display="flex" flexDirection="column" gap={2}>
+          <StyledH2>Meu contato:</StyledH2>
+          <StyledH2>12 988888888</StyledH2>
+        </Box>
+        <Box display="flex" flexDirection="column" gap={2}>
+          <StyledH2>Email:</StyledH2>
+          <StyledH2>xxx@xyz.com</StyledH2>
         </Box>
         <Box sx={{ display: 'flex', gap: 5 }}>
           <a
@@ -51,4 +51,4 @@ function Header() {
   )
 }
 
-export default Header
+export default Footer
