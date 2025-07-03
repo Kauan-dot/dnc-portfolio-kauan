@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { pxToRem } from '@/utils'
 import { StyledH1, StyledH3, StyledP } from './Typographies'
 import { StyledLinkProject } from './StyledLink'
+import useProjectsRepos from '@/hooks/useProjectsRepos'
 
 const StyledCard = styled.div`
   width: ${pxToRem(550)};
@@ -18,19 +19,39 @@ const StyledCard = styled.div`
   img {
     width: ${pxToRem(500)};
     height: ${pxToRem(266)};
-    border: 1px solid white;
+    object-fit: contain;
     border-radius: ${pxToRem(8)};
   }
 `
 
+const getTechImage = (language: string | null) => {
+  switch (language?.toLowerCase()) {
+    case 'javascript':
+      return '/js.png'
+    case 'html':
+      return '/html.png'
+    case 'css':
+      return '/css.png'
+    case 'typescript':
+      return '/ts.png'
+    case 'react':
+      return '/react.png'
+    default:
+      return '/default.png'
+  }
+}
+
 function Projects() {
+  const { repos, loading } = useProjectsRepos('Kauan-dot')
+
+  if (loading) return <p>Carregando...</p>
+
   return (
     <Box
       id="projetos"
-      component={'section'}
+      component="section"
       sx={{
         mb: { xs: 8, md: 16 },
-        height: '100%',
         display: 'flex',
       }}
     >
@@ -39,25 +60,39 @@ function Projects() {
           <StyledH1>Projetos</StyledH1>
           <Grid
             container
-            spacing={{ xs: 12, md: 15 }}
+            ml={10}
+            spacing={10}
             columns={{ xs: 2, sm: 4, md: 8 }}
           >
-            {Array.from(Array(4)).map((_, index) => (
-              <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-                <StyledCard>
-                  <img src="" alt="" />
-                  <StyledH3>Projeto {index + 1}</StyledH3>
-                  <StyledP>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.
-                  </StyledP>
-                  <StyledLinkProject href="#" target="_blank">
-                    Clique aqui
-                  </StyledLinkProject>
-                </StyledCard>
-              </Grid>
-            ))}
+            {repos
+              .filter((repo) => repo.homepage)
+              .slice(0, 4)
+              .map((repo) => (
+                <Grid key={repo.id} size={{ xs: 2, sm: 4, md: 4 }}>
+                  <StyledCard>
+                    <img
+                      src={getTechImage(repo.language)}
+                      alt="Preview do projeto"
+                    />
+                    <StyledH3>{repo.name}</StyledH3>
+                    <Box
+                      mb={2}
+                      display="flex"
+                      flexDirection="column"
+                      justifyContent="space-between"
+                      flex={1}
+                      width="100%"
+                    >
+                      <StyledP>
+                        {repo.description || 'Sem descrição disponível.'}
+                      </StyledP>
+                      <StyledLinkProject href={repo.homepage} target="_blank">
+                        Clique aqui
+                      </StyledLinkProject>
+                    </Box>
+                  </StyledCard>
+                </Grid>
+              ))}
           </Grid>
         </Box>
       </Container>

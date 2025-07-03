@@ -13,13 +13,18 @@ function About() {
       }}
     >
       <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 8 } }}>
-        <Box display="flex" flexDirection="column" gap={2}>
+        <Box display="flex" flexDirection="column" gap={10}>
           <StyledH1>Sobre mim</StyledH1>
           <StyledP>
-            Olá, meu nome é <strong>Kauan</strong>, sou um desenvolvedor
-            front-end apaixonado por criar experiências digitais incríveis. Com
-            uma sólida formação em desenvolvimento web, estou sempre em busca de
-            novos desafios e oportunidades para aprimorar minhas habilidades.
+            Atualmente estou iniciando minha trajetória no desenvolvimento web,
+            estudando tecnologias como <strong>HTML</strong>,{' '}
+            <strong>CSS</strong>, <strong>JavaScript</strong> e{' '}
+            <strong>React</strong>. Tenho aplicado meus aprendizados em projetos
+            práticos, sempre buscando evoluir e me preparar para o mercado de
+            trabalho. <br />
+            Tenho facilidade para aprender, gosto de resolver problemas e estou
+            em busca da minha primeira oportunidade profissional como
+            desenvolvedor.
           </StyledP>
         </Box>
       </Container>

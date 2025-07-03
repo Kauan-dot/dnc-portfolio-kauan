@@ -2,7 +2,7 @@ import Box from '@mui/material/Box'
 import Container from '@mui/material/Container'
 import githubIcon from '../assets/github.svg'
 import linkedinIcon from '../assets/linkedin.svg'
-import { StyledLink } from './StyledLink'
+import { StyledLink, Icon } from './StyledLink'
 
 function Header() {
   return (
@@ -36,14 +36,14 @@ function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={githubIcon} alt="GitHub" />
+            <Icon src={githubIcon} alt="GitHub" size={32} />
           </a>
           <a
             href="https://linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={linkedinIcon} alt="LinkedIn" />
+            <Icon src={linkedinIcon} alt="Linkedin" size={32} />
           </a>
         </Box>
       </Container>
