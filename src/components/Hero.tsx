@@ -15,14 +15,12 @@ function Hero() {
     >
       <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 8 } }}>
         <Box display="flex" flexDirection="column" gap={5} maxWidth="1000px">
-          <StyledH1>Lorem ipsum dolor sit amet</StyledH1>
+          <StyledH1>Olá, eu sou Kauan — desenvolvedor Front-end</StyledH1>
           <StyledH3 color="#BCBCBC">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Veja alguns dos meus projetos desenvolvidos com foco em performance,
+            responsividade e boas práticas de código.
           </StyledH3>
-          <StyledLinkButton href="#" target="_blank">
-            Saber mais
-          </StyledLinkButton>
+          <StyledLinkButton href="#sobre">Saber mais</StyledLinkButton>
         </Box>
       </Container>
     </Box>

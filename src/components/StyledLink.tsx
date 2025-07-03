@@ -14,6 +14,10 @@ export const StyledLink = styled.a<
     color: ${(props) => props.theme.buttons.primaryHover};
   }
 `
+export const Icon = styled.img<{ size?: number }>`
+  width: ${({ size }) => size || 24}px;
+  height: ${({ size }) => size || 24}px;
+`
 
 export const StyledLinkButton = styled.a<
   { theme?: DefaultTheme } & StyledButtonProps
