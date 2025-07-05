@@ -10,6 +10,7 @@ function About() {
         mb: { xs: 8, md: 16 },
         height: '100%',
         display: 'flex',
+        textAlign: { xs: 'center', md: 'start' },
       }}
     >
       <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 8 } }}>

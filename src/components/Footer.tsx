@@ -7,7 +7,7 @@ import linkedinIcon from '../assets/linkedin.svg'
 function Footer() {
   return (
     <Box
-      component="header"
+      component="footer"
       sx={{
         height: '100%',
         display: 'flex',
@@ -20,19 +20,42 @@ function Footer() {
           mb: { xs: 8, md: 17 },
           px: { xs: 2, sm: 4, md: 8 },
           display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
-          alignItems: 'center',
+          textAlign: { xs: 'center', md: 'start' },
+          gap: { xs: 4, md: 10 },
         }}
       >
-        <Box display="flex" flexDirection="column" gap={2}>
-          <StyledH2>Meu contato:</StyledH2>
-          <StyledH2>11 933647997</StyledH2>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            width: '100%',
+            '@media (max-width: 1200px)': {
+              flexDirection: 'column',
+              gap: 2,
+            },
+          }}
+        >
+          <Box display="flex" flexDirection="column" gap={1}>
+            <StyledH2>Meu contato:</StyledH2>
+            <StyledH2>11 933647997</StyledH2>
+          </Box>
+
+          <Box display="flex" flexDirection="column" gap={1}>
+            <StyledH2>Email:</StyledH2>
+            <StyledH2>kauanaffonso115@gmail.com</StyledH2>
+          </Box>
         </Box>
-        <Box display="flex" flexDirection="column" gap={2}>
-          <StyledH2>Email:</StyledH2>
-          <StyledH2>kauanaffonso115@gmail.com</StyledH2>
-        </Box>
-        <Box sx={{ display: 'flex', gap: 5 }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: { xs: 'center', md: 'flex-end' },
+            gap: 5,
+            mt: { xs: 2, md: 0 },
+          }}
+        >
           <a
             href="https://github.com"
             target="_blank"
