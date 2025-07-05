@@ -11,10 +11,17 @@ function Hero() {
         height: '100%',
         display: 'flex',
         alignItems: 'center',
+        textAlign: { xs: 'center', md: 'start' },
       }}
     >
       <Container maxWidth="xl" sx={{ px: { xs: 2, sm: 4, md: 8 } }}>
-        <Box display="flex" flexDirection="column" gap={5} maxWidth="1000px">
+        <Box
+          display="flex"
+          flexDirection="column"
+          gap={5}
+          maxWidth="1000px"
+          alignItems={{ xs: 'center', md: 'flex-start' }}
+        >
           <StyledH1>Olá, eu sou Kauan — desenvolvedor Front-end</StyledH1>
           <StyledH3 color="#BCBCBC">
             Veja alguns dos meus projetos desenvolvidos com foco em performance,

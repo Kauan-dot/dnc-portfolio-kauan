@@ -22,15 +22,28 @@ function Header() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
+          gap: { xs: 2, md: 0 },
         }}
       >
         <Box
-          sx={{ flex: 1, display: 'flex', justifyContent: 'center', gap: 25 }}
+          sx={{
+            flex: 1,
+            display: 'flex',
+            justifyContent: 'center',
+            gap: { xs: 2, sm: 6, md: 10 },
+          }}
         >
           <StyledLink href="#projetos">Projetos</StyledLink>
           <StyledLink href="#sobre">Sobre mim</StyledLink>
         </Box>
-        <Box sx={{ display: 'flex', gap: 5 }}>
+        <Box
+          sx={{
+            mt: { xs: 2, md: 0 },
+            display: 'flex',
+            gap: 5,
+            justifyContent: { xs: 'center', md: 'flex-end' },
+          }}
+        >
           <a
             href="https://github.com"
             target="_blank"

@@ -36,6 +36,12 @@ export const StyledLinkButton = styled.a<
     background: ${(props) => props.theme.buttons.primaryHover};
     transform: translateY(${pxToRem(5)});
   }
+
+  @media (max-width: 1200px) {
+    font-size: ${(props) => pxToRem(props.size || 25)};
+    padding: ${(props) =>
+      `${pxToRem((props.padding?.paddingY ?? 15) * 2)} ${pxToRem((props.padding?.paddingX ?? 31) * 2)}`};
+  }
 `
 
 export const StyledLinkProject = styled.a<
@@ -55,5 +61,12 @@ export const StyledLinkProject = styled.a<
   &:hover {
     background: ${(props) => props.theme.buttons.primaryHover};
     transform: translateX(${pxToRem(5)});
+  }
+
+  @media (max-width: 1200px) {
+    align-self: center;
+    font-size: ${(props) => pxToRem(props.size || 25)};
+    padding: ${(props) =>
+      `${pxToRem((props.padding?.paddingY ?? 15) * 2)} ${pxToRem((props.padding?.paddingX ?? 31) * 2)}`};
   }
 `

@@ -6,7 +6,8 @@ import { StyledLinkProject } from './StyledLink'
 import useProjectsRepos from '@/hooks/useProjectsRepos'
 
 const StyledCard = styled.div`
-  width: ${pxToRem(550)};
+  width: 100%;
+  max-width: ${pxToRem(550)};
   height: ${pxToRem(700)};
   border-radius: 40px 0 40px 0;
   padding: ${pxToRem(25)};
@@ -60,15 +61,17 @@ function Projects() {
           <StyledH1>Projetos</StyledH1>
           <Grid
             container
-            ml={10}
             spacing={10}
-            columns={{ xs: 2, sm: 4, md: 8 }}
+            columns={{ xs: 2, sm: 8, md: 8 }}
+            sx={{
+              justifyContent: { xs: 'center', md: 'flex-start' },
+            }}
           >
             {repos
               .filter((repo) => repo.homepage)
               .slice(0, 4)
               .map((repo) => (
-                <Grid key={repo.id} size={{ xs: 2, sm: 4, md: 4 }}>
+                <Grid key={repo.id} size={{ xs: 12, sm: 6, md: 4 }}>
                   <StyledCard>
                     <img
                       src={getTechImage(repo.language)}
