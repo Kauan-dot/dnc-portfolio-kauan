@@ -22,6 +22,10 @@ export const StyledH2 = styled.h2<TypographiesProps>`
   font-size: ${(props) => pxToRem(props.size || 42)};
   font-weight: ${(props) => props.weight || 600};
   line-height: ${(props) => pxToRem(props.lineheight || 50)};
+
+  @media (max-width: 1400px) {
+    font-size: ${(props) => pxToRem((props.size || 42) * 0.8)};
+  }
 `
 export const StyledH3 = styled.h3<TypographiesProps>`
   color: ${(props) => props.color || 'inherit'};

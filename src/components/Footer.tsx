@@ -22,7 +22,8 @@ function Footer() {
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
-          gap: { xs: 4, md: 0 },
+          textAlign: { xs: 'center', md: 'start' },
+          gap: { xs: 4, md: 10 },
         }}
       >
         <Box
